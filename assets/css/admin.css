@@ -19,7 +19,9 @@ body {
   align-items: center;
 }
 
+
 /* -------------------  ADMING LOGIN  PAGE -------------- */
+
 
 .admin-login-container {
   background-color: var(--color-bg-card);
@@ -30,6 +32,7 @@ body {
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
   padding: var(--space-lg);
+ transition: all 0.3s ease-in;
 }
 
 .top {
@@ -104,12 +107,10 @@ input:focus {
   color: var(--color-text-white);
   width: 100%;
   font-size: var(--font-md);
+  background-color: var(--color-secondary);
 }
 
-#authentication-btn {
-  background-color: var(--color-secondary);
-  width: 100%;
-}
+
 .go-to-homepage {
   margin-top: var(--space-lg);
   width: 100%;
@@ -130,7 +131,7 @@ input:focus {
   position: absolute;
   top: -70px;
   z-index: 999;
-  box-shadow:var(--shadow-lg) ;
+  box-shadow: var(--shadow-lg);
   background-color: var(--color-secondary-light);
   transition: all 0.4s ease-in-out;
 }
@@ -140,16 +141,15 @@ input:focus {
   font-size: var(--font-md);
 }
 
-.notification h3 i{
-    font-size: var(--font-xl);
-    color:var(--color-secondary-dark);
-    margin-right: var(--space-xs);
+.notification h3 i {
+  font-size: var(--font-xl);
+  color: var(--color-secondary-dark);
+  margin-right: var(--space-xs);
 }
 
-.notification-enter{
-    top:20px;
+.notification-enter {
+  top: 20px;
 }
-
 
 .dashboard-container {
   width: 100%;
@@ -171,6 +171,7 @@ input:focus {
   padding: var(--space-md);
   position: relative;
 }
+
 .sidebar * {
   color: var(--color-text-white);
 }
@@ -252,9 +253,9 @@ input:focus {
   background-color: var(--color-secondary-light);
 }
 
-/* TOP SECTION  */
+/* -------- MAIN WINDOW HEADER SECTION ----- */
 .main-window-header {
-  padding: var(--space-md);
+  padding: var(--space-md); 
 }
 
 .main-window-title {
@@ -264,6 +265,10 @@ input:focus {
 .complaints-count-section {
   width: 100%;
   flex-wrap: wrap;
+  background-color: var(--color-white);
+  border-radius: var(--radius-xs);
+  padding:var(--space-md) 0;
+  box-shadow: var(--shadow-md);
 }
 .complaints-count-section .box {
   width: 200px;
@@ -274,6 +279,7 @@ input:focus {
   flex-shrink: 0;
   align-items: flex-start;
   box-shadow: var(--shadow-md);
+  background-color: var(--color-text-white);
 }
 .complaints-count-section .box h1 {
   font-weight: 900;
@@ -306,16 +312,18 @@ input:focus {
 }
 
 .hero-content {
-  height: 440px;
+  height: 400px;
   border: 1px solid var(--color-secondary);
   border-radius: var(--radius-sm);
   overflow: auto;
+  box-shadow:var(--shadow-lg) ;
 }
 
 .hero-content table {
   border-collapse: collapse;
   border: none;
   width: 100%;
+
 }
 
 .hero-content th {
@@ -323,12 +331,14 @@ input:focus {
   font-weight: 800;
   position: sticky;
   top: 0px;
-  background-color: var(--color-secondary-light);
-}
-.hero-content th,
-td {
+  background-color: var(--color-secondary);
+  color:white;
   padding: var(--space-sm);
+}
+.hero-content td {
   text-align: center;
+  padding: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .complaint-status {
@@ -348,14 +358,14 @@ td {
   color: var(--color-danger);
 }
 
-#review-complaint {
+.review-complaint {
   border: 1px solid var(--color-secondary);
   text-decoration: none;
   font-size: var(--font-md);
   font-weight: 700;
 }
 
-#review-complaint:hover {
+.review-complaint:hover {
   background-color: var(--color-secondary);
   color: var(--color-text-white);
 }
@@ -369,10 +379,23 @@ td {
   width: 100%;
   padding: var(--space-lg);
   flex-wrap: wrap;
-}
+  background-color: var(--color-light-green);
+  border-radius: var(--radius-xs);
+   box-shadow:var(--shadow-sm) ;
+  border: 1px solid var(--color-secondary);
 
+}
+.records-search-section select{
+  outline:none;
+  background-color: white;
+}
+.records-search-section input[type="date"]{
+  background-color: white;
+}
 .outer-search {
+  margin-top: 8px;
   display: none;
+
 }
 .filter {
   display: flex;
@@ -387,17 +410,13 @@ td {
 .records-table {
   width: 100%;
   min-height: 400px;
-}
-.records-table table {
-  width: 100%;
-}
-
-.records-table {
-  height: 440px;
+   box-shadow:var(--shadow-lg) ;
+   border-radius: var(--radius-sm);
+   height: 440px;
   border: 1px solid var(--color-secondary);
   border-radius: var(--radius-xs);
   overflow: auto;
-  margin-top: 10px;
+  margin-top: var(--space-xl);
 }
 
 .records-table table {
@@ -411,16 +430,155 @@ td {
   font-weight: 800;
   position: sticky;
   top: 0px;
-  background-color: var(--color-secondary-light);
-}
-.records-table th,
-td {
+  background-color: var(--color-secondary);
+  color:white;
   padding: var(--space-sm);
+}
+.records-table td {
   text-align: center;
+  border-bottom: 1px solid var(--color-border);
 }
 
 #search-result {
   background-color: var(--color-secondary);
   color: var(--color-text-white);
   font-weight: 800;
+}
+
+/*  REVIEW COMPLAINT */
+
+
+.complaint-review-section{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: auto;
+  padding:var(--space-lg) var(--space-xl);
+
+}
+
+.complaint-details{
+  width: 60%;
+  padding:var(--space-xl);
+
+}
+.complaint-details h1{
+  margin-bottom: var(--space-md);
+}
+.complaint-details .profile{
+  padding:var(--space-md) 0;
+  width: 100%;
+}
+.complaint-details .profile .student-logo{
+  background-color: var(--color-primary);
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  color:var(--color-text-white);
+  flex-shrink: 0;
+}
+
+.complaint-details .profile .student-info h5{
+  font-weight: 400;
+}
+
+.complaint-details .category-info{
+  padding:var(--space-lg) 0;
+}
+.complaint-details .category-info p{
+  font-size: var(--font-sm);
+  margin-top: var(--space-xxs);
+  
+}
+
+.complaint-details .complaint-desc h5{
+  letter-spacing: 1px;
+  font-weight: 800;
+}
+.complaint-details .complaint-desc p{
+  margin-top: var(--space-xxs);
+  font-weight: 300;
+  font-size: var(--font-sm);
+  margin-top: var(--space-xxs);
+}
+.update-complaint-status{
+  width: 40%;
+  padding:var(--space-xl);
+
+}
+
+.update-complaint-status h1{
+  margin-bottom: var(--space-md);
+}
+
+.update-complaint-status label {
+  font-size: var(--font-sm);
+  font-weight: 600;
+}
+
+.update-complaint-status form{
+  padding:var(--space-md) 0;
+}
+.update-complaint-status form select{
+  outline:none;
+}
+
+#remark-container textarea{
+resize: none;
+outline:none;
+font-size: var(--font-md);
+}
+
+#remark-container textarea::placeholder{
+  font-size: var(--font-md);
+}
+#update-complaint-btn{
+  color: var(--color-text-white);
+  width: 100%;
+  font-size: var(--font-md);
+  background-color: var(--color-secondary);
+
+}
+
+/* -------- REVIEW COMPLAINT MODAL ---------- */
+.review-complaint-modal {
+  display: none;
+  width: 80vw;
+  height: 70vh;
+  background-color: var(--color-secondary-light);
+  position: absolute;
+  border-radius: var(--radius-xs);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 998;
+}
+.background {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(3px);
+  filter: brightness(0.7);
+  z-index: 997;
+}
+
+.show-modal {
+  display: block;
+}
+.show-background {
+  display: block;
+}
+#closeModal {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background-color: var(--color-light-dark);
+  padding:var(--space-md);
+  border-radius: var(--radius-full);
+}
+#closeModal i {
+  font-size: var(--font-lg);
+  font-weight: 900;
+  cursor: pointer;
 }

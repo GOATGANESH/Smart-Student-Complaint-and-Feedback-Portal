@@ -9,11 +9,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../assets/css/admin.css" />
-    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css" />
   </head>
   <body>
-    
-    <div class="admin-login-container flex-col gap-lg">
+    <div class="admin-login-container fade-in flex-col gap-lg">
       <div class="top flex-col justify-center align-items-center">
         <div id="admin-shield-logo">
           <i class="ri-shield-user-fill"></i>
@@ -24,30 +23,36 @@
       </div>
       <div class="bottom">
         <div class="login-form flex-col justify-content-between">
-          <form id="form" class="flex-col gap-xl">
+          <form id="form" class="flex-col gap-xl" method="post">
             <div id="username-container">
               <label for="username">Username</label>
               <input
                 type="text"
-                name="username"
-                id="username"
+                name="admin-username"
+                id="admin-username"
                 class="input"
                 placeholder="Admin Username"
+                required
               />
             </div>
             <div id="password-container">
               <label for="password">Password</label>
               <input
                 type="password"
-                name="password"
-                id="password"
+                name="admin-password"
+                id="admin-password"
                 class="input"
                 placeholder="Account password"
+                required
               />
+              <p class="warning-msg">
+                password should contain minimum 6 characters
+              </p>
             </div>
-            <a href=""> <button type="submit" id="authentication-btn"  class="btn-lg">
-              Authenticate
-            </button>
+            <a>
+              <button type="submit" id="authentication-btn" class="btn-lg">
+                Authenticate
+              </button>
             </a>
           </form>
           <div class="go-to-homepage">
@@ -61,10 +66,32 @@
     </div>
   </body>
   <script>
-    let authButton = document.getElementById("authentication-btn");
-    authButton.addEventListener("click", (e) => {
-        e.preventDefault();
-      window.location.href='./dashboard/AdminPanel.html'
+    addEventListener("DOMContentLoaded",()=>{
+      document.querySelector('.admin-login-container').classList.add('show');
+    })
+    const loginForm = document.getElementById("form");
+    const adminUserName = document.getElementById("admin-username");
+    const adminLoginPass = document.getElementById("admin-password");
+
+    adminLoginPass.addEventListener("focus", function (e) {
+      this.classList.remove("invalid");
+      document
+        .querySelector(".warning-msg")
+        .classList.remove("invalid-pass-warning");
+    });
+
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (adminLoginPass.value.length < 6) {
+        adminLoginPass.classList.add("invalid");
+        document
+          .querySelector(".warning-msg")
+          .classList.add("invalid-pass-warning");
+      }
+      else{
+       loginForm.submit();
+       window.location.href='./dashboard/AdminPanel.html'
+      }
     });
   </script>
 </html>
