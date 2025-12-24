@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../assets/css/admin.css" />
+    <link rel="stylesheet" href="../../assets/css/responsive.css" />
+  </head>
+  <body>
+    <div class="notification flex justify-content-center align-items-center ">
+        <h3><i class="ri-verified-badge-line"></i><span>Login success !</span></h3>
+    </div>
+    <div class="overlay"></div>
+    <main class="dashboard-container flex">
+      <div class="sidebar flex-col">
+        <div class="sidebar-top flex-col justify-content-center">
+          <div class="closeMenuIcon"><i class="ri-close-large-line"></i></div>
+          <span class="flex gap-sm align-items-center"
+            ><i class="ri-shield-user-fill"></i>
+            <h3>Admin Console</h3></span
+          >
+        </div>
+        <div class="sidebar-bottom flex-col justify-space-between ">
+          <ul class="links-container flex-col gap-md">
+            <li class="link flex align-items-center gap-sm active">
+              <a href="../dashboard/dashboard.html">
+              <i class="ri-dashboard-horizontal-line"></i> Dashboard
+              </a>
+            </li>
+            <li class="link flex align-items-center gap-sm">
+              <a href="../complaints/AllRecords.html">
+              <i class="ri-folder-open-line"></i> All Records
+              </a>
+            </li>
+          </ul>
+          <div class="admin-info ">
+            <h4>Admin : Dr. R.K.Patil </h4>
+            <button id="admin-logout" class="btn-md">Logout</button>
+          </div>
+        </div>
+      </div>
+      <div class="humburger"><i class="ri-menu-line"></i></div>
+      <div class="dashboard-main-window flex-col">
+         <!-- Dynamic pages goes here -->
+      </div>
+    </main>
+    <script>
+        addEventListener('load',()=>{
+            document.querySelector('.notification').classList.add('notification-enter')
+            setTimeout(()=>{
+                 document.querySelector('.notification').classList.remove('notification-enter')
+            },1000)
+        })
+        fetch('./dashboard.html')
+        .then(res => res.text())
+        .then(text =>{
+            document.querySelector('.dashboard-main-window').innerHTML= text
+        } )
+    </script>
+    <script src="../../assets/js/admin.js"></script>
+  </body>
+</html>

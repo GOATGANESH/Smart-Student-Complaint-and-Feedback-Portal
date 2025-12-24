@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/admin.css" />
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+  </head>
+  <body>
+    
+    <div class="admin-login-container flex-col gap-lg">
+      <div class="top flex-col justify-center align-items-center">
+        <div id="admin-shield-logo">
+          <i class="ri-shield-user-fill"></i>
+        </div>
+        <div class="tag-line flex align-items-center justify-space-between">
+          <span>Admin Console</span> <button id="restricted">RESTRICTED</button>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="login-form flex-col justify-content-between">
+          <form id="form" class="flex-col gap-xl">
+            <div id="username-container">
+              <label for="username">Username</label>
+              <input
+                type="text"
+                name="username"
+                id="username"
+                class="input"
+                placeholder="Admin Username"
+              />
+            </div>
+            <div id="password-container">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                class="input"
+                placeholder="Account password"
+              />
+            </div>
+            <a href=""> <button type="submit" id="authentication-btn"  class="btn-lg">
+              Authenticate
+            </button>
+            </a>
+          </form>
+          <div class="go-to-homepage">
+            <a href="../HomePage.html"
+              ><i class="ri-arrow-left-long-fill"></i> Return to public
+              portal</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let authButton = document.getElementById("authentication-btn");
+    authButton.addEventListener("click", (e) => {
+        e.preventDefault();
+      window.location.href='./dashboard/AdminPanel.html'
+    });
+  </script>
+</html>

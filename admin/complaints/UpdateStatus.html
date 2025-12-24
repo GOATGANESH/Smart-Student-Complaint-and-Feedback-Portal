@@ -1,0 +1,47 @@
+<div class="complaint-review-section">
+  <div class="complaint-details">
+    <h2>Complaint Details</h2>
+    <div class="profile">
+      <div class="student-logo"></div>
+      <div class="student-info"></div>
+    </div>
+    <div class="category-info">
+      <h4>Category</h4>
+      <p>Infrastructure</p>
+    </div>
+    <div class="complaint-desc">
+      <h3>Description</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero fugiat
+        commodi libero iure quam cupiditate distinctio nam. Voluptatibus
+        pariatur accusantium saepe ea magnam.
+      </p>
+    </div>
+  </div>
+  <div class="update-complaint-status">
+    <h1>Update Status</h1>
+    <form id="form" class="flex-col gap-xl">
+      <label for="c-status">Category</label>
+      <select name="c-status" id="c-status" class="input">
+        <option value="">In progress</option>
+        <option value="Resolved">Resolved</option>
+        <option value="Rejected">Rejected</option>
+      </select>
+      <div id="password-container">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          class="input"
+          placeholder="Account password"
+        />
+      </div>
+      <a href="">
+        <button type="submit" id="authentication-btn" class="btn-lg">
+          Authenticate
+        </button>
+      </a>
+    </form>
+  </div>
+</div>
