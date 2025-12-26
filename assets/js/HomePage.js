@@ -2,15 +2,11 @@
         function showToast(message, type = 'success') {
             const container = document.getElementById('toast-container');
             
-           
             const toast = document.createElement('div');
             toast.className = `toast toast-${type}`;
             
-          
             const icon = type === 'success' ? '✅' : '⚠️';
-            
             toast.innerHTML = `<span class="icon">${icon} </span> ${message}`;
-            
             container.appendChild(toast);
             
             
@@ -79,7 +75,7 @@
             let isValid = true;
 
            
-            fields.forEach(id => 
+            fields.forEach(id =>
                 {
                 const el = document.getElementById(id);
                 if(!el.value.trim()) {
@@ -102,7 +98,8 @@
 
           
             const email = document.getElementById('signup-email').value;
-            if(!email.includes('@')) {
+            if(!email.includes('@')||email.charAt(0)!== email.charAt(0).toLowerCase()) {
+
                 showError('signup-email', 'Invalid email address');
                 return;
             }
@@ -123,9 +120,11 @@
             }
 
             // SUCCESS
-            showToast('Registration Successful! Redirecting...', 'success');
-            setTimeout(() => { switchToLogin(); }, 1500);
+            
+            return isValid;
         }
+
+
 
         // LOGIN LOGIC
         function handleLogin() {
@@ -141,16 +140,14 @@
                 pass.classList.add('input-error');
                 isValid = false;
             }
-
-            if(!isValid) {
-                showToast('Credentials required', 'error');
-                return;
+            if(pass.value.trim().length < 6){
+                 showError('signup-pass', 'Password is too short (Strong 6)');
+                 isValid=false;
             }
+            // if(!isValid) {
+            //     showToast('Credentials required', 'error');
+            //     return false;
+            // }    
 
-            showToast('Login Verified! Opening Dashboard...', 'success');
-            
-           
-            setTimeout(() => {
-               window.location.href = 'student/dashboard/Dashboard.html';
-            }, 1000);
+            return isValid;
         }
