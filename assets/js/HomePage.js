@@ -44,7 +44,13 @@
             closeAll();
             document.getElementById('studentLoginModal').style.display = 'flex';
         }
-
+        
+         function openAdminLogin() {
+            closeAll();
+            // document.getElementById('AdminLoginModal').style.display = 'flex';
+            window.location.href = 'admin/adminLogin.html';
+            
+        }
         function switchToSignup() {
             document.getElementById('studentLoginModal').style.display = 'none';
             document.getElementById('studentSignupModal').style.display = 'flex';
@@ -145,6 +151,6 @@
             
            
             setTimeout(() => {
-               window.location.href = 'student/dashboard/Sdashboard.html';
+               window.location.href = 'student/dashboard/Dashboard.html';
             }, 1000);
         }
