@@ -157,3 +157,28 @@ function closeModal() {
 window.onclick = function (event) {
     if (event.target == document.getElementById('details-modal')) closeModal();
 }
+
+/* --- MOBILE MENU TOGGLE --- */
+function toggleSidebar() {
+    const sidebar = document.querySelector('aside');
+    sidebar.classList.toggle('active');
+    
+    // Optional: Close sidebar when clicking a menu item on mobile
+    if(window.innerWidth <= 768) {
+        const navBtns = document.querySelectorAll('.nav-btn');
+        navBtns.forEach(btn => {
+            btn.onclick = () => {
+                showTab(btn.id.replace('btn-',''));
+                sidebar.classList.remove('active');
+            }
+        });
+    }
+}
+
+// Close sidebar when clicking outside (on the main content)
+document.querySelector('main').addEventListener('click', () => {
+    const sidebar = document.querySelector('aside');
+    if (window.innerWidth <= 768 && sidebar.classList.contains('active')) {
+        sidebar.classList.remove('active');
+    }
+});

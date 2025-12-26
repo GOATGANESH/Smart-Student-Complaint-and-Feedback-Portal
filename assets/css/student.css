@@ -253,6 +253,9 @@
      overflow: hidden;
      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
      border: 1px solid var(--border);
+     
+    overflow-x: auto; /* Adds scroll bar if table is too wide */
+
  }
 
  table {
@@ -571,3 +574,113 @@
  .close-modal-btn:hover {
      background: #E5E7EB;
  }
+ /* =========================================
+   MOBILE RESPONSIVENESS (Max-width: 768px)
+   ========================================= */
+
+/* Hide mobile header on Desktop */
+.mobile-header { display: none; }
+
+@media screen and (max-width: 768px) {
+
+    /* --- 1. GENERAL LAYOUT --- */
+    body {
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+
+    /* --- 2. MOBILE HEADER (Icon Left, Logo Right) --- */
+    .mobile-header {
+        display: flex;
+        align-items: center; /* Vertically center */
+        justify-content: flex-start; /* Align to the LEFT */
+        gap: 15px; /* Space between Icon and Logo */
+        height: 60px; /* Fixed height */
+        padding: 0 1.5rem;
+        background: white;
+        border-bottom: 1px solid var(--border);
+        position: sticky;
+        top: 0;
+        z-index: 300; /* Highest priority */
+        width: 100%;
+    }
+
+    .hamburger-btn {
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: var(--text-main);
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .brand-mobile {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--primary);
+    }
+
+    /* --- 3. SIDEBAR (Slides in UNDER the header) --- */
+    aside {
+        position: fixed;
+        top: 60px; /* Starts BELOW the header height */
+        left: -100%; /* Hidden off-screen */
+        width: 260px;
+        height: calc(100vh - 60px); /* Full height minus header */
+        background: white;
+        box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+        transition: left 0.3s ease-in-out;
+        z-index: 200;
+        border-right: 1px solid var(--border);
+    }
+
+    aside.active {
+        left: 0; /* Slide in */
+    }
+
+    /* --- 4. MAIN CONTENT --- */
+    main {
+        padding: 1rem;
+        width: 100%;
+    }
+
+    /* --- 5. STATUS SECTION (Button on Right, Small) --- */
+    .header-row {
+        display: flex;
+        flex-direction: row; /* Force side-by-side */
+        justify-content: space-between; /* Spread them apart */
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .header-title {
+        font-size: 1.2rem; /* Slightly smaller text */
+        margin: 0;
+    }
+
+    .btn-new-complaint {
+        width: auto; /* STOP it from being full width */
+        padding: 8px 14px; /* Smaller button */
+        font-size: 0.85rem;
+        white-space: nowrap; /* Keep text on one line */
+    }
+
+    /* --- 6. TABLE & MODAL FIXES --- */
+    .table-card {
+        overflow-x: auto;
+    }
+
+    .modal-card {
+        width: 95%;
+        margin: 10px;
+        max-height: 85vh;
+    }
+
+    .steps {
+        transform: scale(0.85); /* Shrink tracker slightly */
+        width: 115%; 
+        margin-left: -7.5%;
+    }
+}
