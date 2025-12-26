@@ -8,17 +8,12 @@
   /* Secondary (Green - success / register / resolved) */
   --color-secondary: #10b981;
   --color-secondary-dark: #059669;
-<<<<<<< HEAD
   --color-secondary-extradark:#0f7756;
   --color-secondary-light: #ddf9ec;
   --color-light-green : #d5e7e1;
   --color-light-dark:#aaebd8;
   --color-grey:#bdcec4ba;
   
-=======
-  --color-secondary-light: #ddf9ec;
-
->>>>>>> 4f234d7938f3a1732b79edebc8b3753f3bf6109a
   /* Accent (Purple - student zone button) */
   --color-accent: #6366f1;
   --color-accent-light: #eef2ff;
