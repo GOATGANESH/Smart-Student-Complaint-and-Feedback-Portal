@@ -8,10 +8,58 @@
   .tag-line {
     font-size: var(--font-xl);
   }
-  #review-complaint{
-    font-size: var(--font-sm);
-}
 
+  #review-complaint {
+    font-size: var(--font-sm);
+  }
+
+  .complaint-review-section {
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-lg);
+  }
+
+  .complaint-review-section h1 {
+    font-size: var(--font-xl);
+  }
+
+  .complaint-review-section div {
+    width: 100%;
+  }
+  .complaint-details {
+    padding: var(--padding-sm);
+  }
+  .complaint-details .profile {
+    padding: 0;
+  }
+  .complaint-details .profile .student-info {
+    font-size: var(--font-sm);
+  }
+  .update-complaint-status {
+    margin-top: 10px;
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-md) 0;
+  }
+  .update-complaint-status form {
+    padding: var(--space-sm) 0;
+  }
+  #remark-container textarea {
+    font-size: var(--font-sm);
+  }
+  #remark-container textarea::placeholder {
+    font-size: var(--font-sm);
+  }
+  .review-complaint-modal {
+    width: 90vw;
+  }
+  #closeModal {
+    width: 30px;
+    height: 30px;
+  }
+  #closeModal i {
+    font-size: var(--font-sm);
+    font-weight: 900;
+  }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -66,42 +114,46 @@
   .hero-content table th {
     font-size: var(--font-sm);
   }
-  .hero-content td{
-    padding:var(--space-sm);
+  .hero-content td {
+    padding: var(--space-sm);
     text-align: center;
     font-size: var(--font-sm);
-}
+  }
   .hero-content {
     justify-content: start;
     height: 350px;
     width: 100%;
   }
+
   /* RECORDS LIST */
-  .records-container{
-    padding:var(--space-sm);
+  .records-container {
+    padding: var(--space-sm);
   }
-  .records-section-title{
-    padding:var(--space-md);
+  .records-section-title {
+    padding: var(--space-md);
   }
-  .records-search-section{
-    gap:8px;
-    padding:var(--space-sm);
+
+  .records-search-section {
+    gap: 8px;
+    padding: var(--space-sm);
     justify-content: center;
   }
-  .inner-search{
+
+  .inner-search {
     display: none;
   }
-  .outer-search{
+  .outer-search {
     display: flex;
   }
+  
   .records-table table th {
     font-size: var(--font-sm);
   }
-  .records-table td{
-    padding:var(--space-sm);
+  .records-table td {
+    padding: var(--space-sm);
     text-align: center;
     font-size: var(--font-sm);
-}
+  }
   .records-table {
     justify-content: start;
     height: 350px;
