@@ -32,7 +32,7 @@
             </nav>
         </div>
         <div class="logout-container">
-            <a href="../../HomePage.html" class="logout-link">Log Out</a>
+            <a  class="logout-link" id="student-logout-btn">Log Out</a>
         </div>
     </aside>
 
@@ -42,15 +42,19 @@
                 <div class="card">
                     <h2 id="fch">New Complaint</h2>
                     <p id="fcp">Report an issue below.</p>
-                    <form onsubmit="event.preventDefault(); submitData();">
+                    <form id="complaint-registration-form" action="../../api/student/submit_complaint.php"  method="post">
+                        <?php
+                            session_start();
+                            echo '<input type="hidden" id="student_id" name="student_id" value="'.$_SESSION["student_id"].'">';
+                        ?>
                         <div class="form-group">
                             <label>Category</label>
                             <select id="cat">
                                 <option value="" disabled selected>Select Category...</option>
-                                <option>Infrastructure</option>
-                                <option>Cleanliness</option>
-                                <option>Hostel/Mess</option>
-                                <option>Academic</option>
+                                <option id="1">Infrastructure</option>
+                                <option id="2">Cleanliness</option>
+                                <option id="3">Hostel/Mess</option>
+                                <option id="4">Academic</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -75,7 +79,9 @@
                             <th>Complaint ID</th><th>Category</th><th>Date</th><th>Status</th><th>Action</th>
                         </tr>
                     </thead>
-                    <tbody id="table-body"></tbody>
+                    <tbody id="table-body">
+                        
+                    </tbody>
                 </table>
                 <div id="empty-msg" class="empty-state">No complaints found.</div>
             </div>
@@ -141,5 +147,6 @@
     </div>
 
    <script src="../../assets/js/student.js"></script>
+   <script src="../../assets/js/ajax.js"></script>
 </body>
 </html>

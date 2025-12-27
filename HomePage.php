@@ -71,9 +71,9 @@
             <p id="SLP">Enter credentials to track status</p>
             <form id="student-login-form" action="./api/auth/studentLogin.php" method="post">
                 <div style="text-align:left;">
-                    <label class="SLL">Student ID / PRN</label>
-                    <input type="text" id="login-id" class="input-box" placeholder="e.g., 2024CS001"
-                        oninput="clearError(this)" maxlength="10" required>
+                    <label class="SLL">Student PRN</label>
+                    <input type="text" id="login-id" class="input-box" placeholder="e.g., 1234527787 (10 digit)"
+                        oninput="clearError(this)" maxlength="10" minlength="10" required>
 
                     <label class="SLL">Password</label>
                     <input type="password" id="login-pass" class="input-box" placeholder="••••••••"
@@ -103,8 +103,8 @@
                         class="sgnc" oninput="clearError(this)">
                     <input type="tel" id="signup-mobile" class="input-box" placeholder="Mobile Number" maxlength="10"
                         class="sgnc" oninput="clearError(this)">
-                    <input type="text" id="signup-id" class="input-box" placeholder="Student ID / PRN"
-                        class="sgnc" oninput="clearError(this)" maxlength="10">
+                    <input type="text" id="signup-id" class="input-box" placeholder="Student PRN e.g., 1234527787 (10 digit)"
+                        class="sgnc" oninput="clearError(this)" maxlength="10" minlength="10" >
                     <input type="email" id="signup-email" class="input-box" placeholder="Email Address"
                         class="sgnc" oninput="clearError(this)">
 
@@ -180,7 +180,7 @@
                             
                         showToast('Login Verified! Opening Dashboard...', 'success');
                         setTimeout(() => {
-                            window.location.href = 'student/dashboard/Dashboard.html';
+                            window.location.href = 'student/dashboard/Dashboard.php';
                         }, 1000);
                     }
                 })

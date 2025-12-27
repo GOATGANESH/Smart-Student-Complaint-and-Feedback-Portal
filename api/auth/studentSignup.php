@@ -24,12 +24,12 @@ function validateStudent($user_id)
 if (isset($_GET['user']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
-    $user_id = clearString($_POST['sid']);
-    $user_name = clearString($_POST['sname']);
-    $user_email = clearString($_POST['semail']);
-    $user_mobile = clearString($_POST['smobile']);
-    $user_pass = clearString($_POST['spass']);
-    $user_cpass = clearString($_POST['sconfirm']);
+    $user_id = trim($_POST['sid']);
+    $user_name = trim($_POST['sname']);
+    $user_email = trim($_POST['semail']);
+    $user_mobile = trim($_POST['smobile']);
+    $user_pass = trim($_POST['spass']);
+    $user_cpass = trim($_POST['sconfirm']);
 
     if (!validateStudent($user_id)) {
         $showAlert = "Account already exists ! ";
