@@ -16,7 +16,6 @@ function validateStudent($user_id, $user_pass)
     $result = mysqli_query($conn, $searchSql);
 
     if (mysqli_num_rows($result) != 1) {
-
         return "invalid";
     } else {
         $row = mysqli_fetch_row($result);

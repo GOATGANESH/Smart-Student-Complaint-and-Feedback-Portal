@@ -44,7 +44,8 @@
          function openAdminLogin() {
             closeAll();
             // document.getElementById('AdminLoginModal').style.display = 'flex';
-            window.location.href = 'admin/adminLogin.html';
+            // window.location.href = "../../admin/adminLogin.php";
+            console.log("Hii")
             
         }
         function switchToSignup() {

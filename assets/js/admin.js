@@ -1,8 +1,21 @@
-// -------- ADMIN LOGIN VALIDATION ----------
-// let authButton = document.getElementById("authentication-btn");
+function showToast(msg, type) {
+  const box = document.getElementById("toast-box");
+  const el = document.createElement("div");
 
+  el.className = `toast ${type}`;
+  el.innerHTML = `<span>${type == "success" ? "✅" : "⚠️"}</span> ${msg}`;
 
+  box.appendChild(el);
 
+  setTimeout(() => el.classList.add("show"), 10);
+
+  setTimeout(() => {
+    el.classList.remove("show");
+    setTimeout(() => el.remove(), 300);
+  }, 3000);
+}
+
+showToast("HIi",'success');
 // HUMBURGER LOGIC
 const humburgerIcon = document.querySelector(".humburger");
 let sideBar = document.querySelector(".sidebar");
@@ -62,7 +75,7 @@ document.addEventListener("click", (e) => {
   if (e.target.classList.contains("review-complaint")) {
     e.preventDefault();
    
-    fetch("../../admin/complaints/ReviewComplaint.html")
+    fetch("../../admin/complaints/ReviewComplaint.php")
       .then((res) => res.text())
       .then((text) => {
         document.querySelector(".review-complaint-modal").innerHTML = text;
@@ -82,6 +95,6 @@ document.addEventListener("click", (e) => {
 // LOGOUT
 document.getElementById("admin-logout").addEventListener("click", () => {
   if (confirm("Do you want to exit ?")) {
-    window.location.href = "../../HomePage.html";
+    window.location.href = "../../HomePage.php";
   }
 });

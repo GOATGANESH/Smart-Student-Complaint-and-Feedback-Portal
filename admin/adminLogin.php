@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../assets/css/responsive.css" />
   </head>
   <body>
+    <div id="toast-box"></div>
     <div class="admin-login-container fade-in flex-col gap-lg">
       <div class="top flex-col justify-center align-items-center">
         <div id="admin-shield-logo">
@@ -56,7 +57,7 @@
             </a>
           </form>
           <div class="go-to-homepage">
-            <a href="../HomePage.html"
+            <a href="../HomePage.php"
               ><i class="ri-arrow-left-long-fill"></i> Return to public
               portal</a
             >
@@ -65,33 +66,5 @@
       </div>
     </div>
   </body>
-  <script>
-    addEventListener("DOMContentLoaded",()=>{
-      document.querySelector('.admin-login-container').classList.add('show');
-    })
-    const loginForm = document.getElementById("form");
-    const adminUserName = document.getElementById("admin-username");
-    const adminLoginPass = document.getElementById("admin-password");
-
-    adminLoginPass.addEventListener("focus", function (e) {
-      this.classList.remove("invalid");
-      document
-        .querySelector(".warning-msg")
-        .classList.remove("invalid-pass-warning");
-    });
-
-    loginForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if (adminLoginPass.value.length < 6) {
-        adminLoginPass.classList.add("invalid");
-        document
-          .querySelector(".warning-msg")
-          .classList.add("invalid-pass-warning");
-      }
-      else{
-       loginForm.submit();
-       window.location.href='./dashboard/AdminPanel.html'
-      }
-    });
-  </script>
+  <script src="../assets/js/adminValidation.js"> </script>
 </html>

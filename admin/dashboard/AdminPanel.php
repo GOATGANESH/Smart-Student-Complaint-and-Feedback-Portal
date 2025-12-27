@@ -30,12 +30,12 @@
         <div class="sidebar-bottom flex-col justify-space-between ">
           <ul class="links-container flex-col gap-md">
             <li class="link flex align-items-center gap-sm active">
-              <a href="../dashboard/dashboard.html">
+              <a href="../dashboard/dashboard.php">
               <i class="ri-dashboard-horizontal-line"></i> Dashboard
               </a>
             </li>
             <li class="link flex align-items-center gap-sm">
-              <a href="../complaints/AllRecords.html">
+              <a href="../complaints/AllRecords.php">
               <i class="ri-folder-open-line"></i> All Records
               </a>
             </li>
@@ -58,7 +58,7 @@
                  document.querySelector('.notification').classList.remove('notification-enter')
             },1000)
         })
-        fetch('./dashboard.html')
+        fetch('./dashboard.php')
         .then(res => res.text())
         .then(text =>{
             document.querySelector('.dashboard-main-window').innerHTML= text

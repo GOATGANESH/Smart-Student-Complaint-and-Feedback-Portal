@@ -19,6 +19,48 @@ body {
   align-items: center;
 }
 
+/* -------  TOAST STYLE ------ */
+
+#toast-box {
+     position: fixed;
+     top: 20px;
+     right: 20px;
+     z-index: 100;
+ }
+
+ .toast {
+     background: white;
+     padding: 15px 20px;
+     border-radius: 8px;
+     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     margin-bottom: 10px;
+     border-left: 5px solid #333;
+     transform: translateX(120%);
+     transition: 0.3s;
+ }
+
+ .toast.show {
+     transform: translateX(0);
+ }
+
+ .toast.success {
+     border-color: #10B981;
+ }
+
+ .toast.success span {
+     color: #10B981;
+ }
+
+ .toast.error {
+     border-color: #EF4444;
+ }
+
+ .toast.error span {
+     color: #EF4444;
+ }
 
 /* -------------------  ADMING LOGIN  PAGE -------------- */
 
@@ -255,7 +297,7 @@ input:focus {
 
 /* -------- MAIN WINDOW HEADER SECTION ----- */
 .main-window-header {
-  padding: var(--space-md); 
+  padding: var(--space-md);
 }
 
 .main-window-title {
